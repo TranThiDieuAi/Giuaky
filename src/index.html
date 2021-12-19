@@ -32,6 +32,14 @@
                 }
             )
         })
+
+        function openForm() {
+            document.getElementById('popup-form').style.display = 'flex';
+        }
+
+        function closeForm() {
+            document.getElementById("popup-form").style.display = "none";
+        }
     </script>
 
 </head>
@@ -42,8 +50,26 @@
 
     <!-- body -->
     <div class="container">
+        <div id="popup-form">
+            <form action="#" class="form-container">
+                <div class="title">
+                    <img src="../Logo/Bukbuk.png" alt="">
+                    <div id="close" onclick="closeForm()">x</div>
+                    <h3>Danh sach dia diem</h3>
+                </div>
+                <div class="content">
+                    <p class="content-title">Mien Bac</p>
+                    <p>- 29 Liễu Giai VINCOM Center Metropolis Unit L1-16A Ground Floor, Ba Đình, Hà Nội</p>
+                    <p>- 11 Tràng Tiền, Hoàn Kiếm, Hà Nội {{}}</p>
+                    <p>- No.2, Lot G2, Ground Floor, Someret West Point, Đường Tây Hồ, Quảng An, Tây Hồ, Hà Nội</p>
+                    <p class="content-title">Mien Nam</p>
+                    <p>- 74/1 Hai Bà Trưng, Phường Bến Nghé, Quận 1, Tp. HCM</p>
+                    <p>- LOT L1 – 01,02, Estella Place, 88 Song Hành, An Phú, Quận 2, Tp. HCM</p>
+                </div>
+            </form>
+        </div>
         <div class="row">
-            <div class="col" ng-repeat="res in restaurants">
+            <div class="col" onclick="openForm()" ng-repeat="res in restaurants">
                 <div class="card">
                     <a href="">
                         <img class="card-img" src="{{res.hinh}}" alt="">
