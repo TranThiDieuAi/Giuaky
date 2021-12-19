@@ -26,6 +26,8 @@
             }).then(
                 function success(response) {
                     $scope.restaurants = response.data;
+
+                    $scope.selection = (val) => $scope.res_popup = val;
                 },
                 function error(response) {
                     $scope.error = response.statusText;
@@ -50,10 +52,10 @@
 
     <!-- body -->
     <div class="container">
-        <div id="popup-form">
+        <div id="popup-form" ng-if="res_popup">
             <form action="#" class="form-container">
                 <div class="title">
-                    <img src="../Logo/Bukbuk.png" alt="">
+                    <img src="{{res_popup.hinh}}" alt="">
                     <div id="close" onclick="closeForm()">x</div>
                     <h3>Danh sach dia diem</h3>
                 </div>
@@ -70,7 +72,7 @@
         </div>
         <div class="row">
             <div class="col" onclick="openForm()" ng-repeat="res in restaurants">
-                <div class="card">
+                <div class="card" ng-click="selection(res)">
                     <a href="">
                         <img class="card-img" src="{{res.hinh}}" alt="">
                         <p class="card-name">{{res.ten}}</p>
