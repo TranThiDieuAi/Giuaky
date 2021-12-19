@@ -1,0 +1,107 @@
+/* <576px */
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 80px
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px
+}
+
+.col {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+}
+
+.card {
+    text-align: center;
+    line-height: 5px;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.card:hover {
+    padding-top: 18px;
+    box-shadow: 1px 1px 2px 2px rgb(236, 216, 216);
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card-img {
+    width: 200px;
+    height: 100px;
+    border: 2px solid #dc3545;
+    border-radius: 2.5%;
+    padding: 5px;
+}
+
+.card-name {
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.card-address {
+    font-size: 15px;
+}
+
+.card-discount {
+    font-size: 15px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+
+/* responsive */
+
+@media (min-width:576px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 720px
+    }
+    .col {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px
+    }
+    .col {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1140px
+    }
+    .col {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+}
